@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="SharedCodeClient-jvm">
+    <output-path>$PROJECT_DIR$/SharedCodeClient/build/libs</output-path>
+    <root id="archive" name="SharedCodeClient-jvm.jar">
+      <element id="module-output" name="JetpackComposeKMP.SharedCodeClient.jvmMain" />
+    </root>
+  </artifact>
+</component>
