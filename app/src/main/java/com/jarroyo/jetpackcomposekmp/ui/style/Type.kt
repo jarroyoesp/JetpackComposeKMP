@@ -1,4 +1,4 @@
-package com.jarroyo.jetpackcomposekmp.ui
+package com.jarroyo.jetpackcomposekmp.ui.style
 
 import androidx.compose.material.Typography
 import androidx.compose.ui.text.TextStyle

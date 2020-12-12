@@ -1,4 +1,4 @@
-package com.jarroyo.jetpackcomposekmp.ui
+package com.jarroyo.jetpackcomposekmp.ui.style
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme
