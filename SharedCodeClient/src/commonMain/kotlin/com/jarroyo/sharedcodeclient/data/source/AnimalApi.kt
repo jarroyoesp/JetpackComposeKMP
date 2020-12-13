@@ -9,6 +9,7 @@ import io.ktor.client.request.*
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import com.jarroyo.sharedcodeclient.domain.model.toModel
+import com.github.aakira.napier.Napier
 
 class AnimalApi {
 
@@ -40,6 +41,8 @@ class AnimalApi {
     suspend fun getAnimalImage(name: String): Response<String?> {
         try {
             val url = endpoint + "breed/$name/images/random"
+
+            Napier.d("AnimalAPI", tag = "$url")
             val json = httpClient.get<String>(url) {}
             val breedImageApi = Json.decodeFromString<BreedImageApi>(json)
             return Response.Success(breedImageApi.image)

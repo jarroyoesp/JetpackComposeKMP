@@ -1,6 +1,7 @@
 package com.jarroyo.jetpackcomposekmp.ui.composables
 
 import androidx.activity.ComponentActivity
+import androidx.compose.foundation.ScrollableColumn
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
@@ -25,6 +26,7 @@ import com.jarroyo.jetpackcomposekmp.ui.AppState
 import com.jarroyo.jetpackcomposekmp.ui.CurrentScreen
 import com.jarroyo.jetpackcomposekmp.ui.viewModel.HomeViewModel
 import com.jarroyo.jetpackcomposekmp.R
+import com.jarroyo.jetpackcomposekmp.ui.utils.NetworkImage
 import com.jarroyo.sharedcodeclient.domain.model.Breed
 
 @Composable
@@ -32,9 +34,8 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
     val activity = (LifecycleOwnerAmbient.current as ComponentActivity)
     val animalList: List<Breed>? by homeViewModel.animalListLiveData.observeAsState()
 
-    homeViewModel.getAnimalListFlow()
 
-    Column(modifier = Modifier.padding(16.dp)) {
+    ScrollableColumn(modifier = Modifier.padding(16.dp)) {
         animalList?.let {
             for (animal in it) {
                 Card(
@@ -45,7 +46,13 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
                     Box(
                         modifier = Modifier.padding(16.dp),
                     ){
-                        Text("${animal.name} ${animal.image}")
+                        NetworkImage(
+                            url = animal.image ?: "",
+                            Modifier.fillMaxWidth().aspectRatio(2.0f),
+                            circularRevealedEnabled = true
+                        )
+
+                        Text(color = Color.Cyan, text = "${animal.name}")
                     }
                 }
                 Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))

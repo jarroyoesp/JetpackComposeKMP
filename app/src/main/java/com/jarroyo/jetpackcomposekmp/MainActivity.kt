@@ -26,6 +26,7 @@ class MainActivity : ComponentActivity() {
             JetpackComposeKMPTheme {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
+                    homeViewModel.getAnimalListFlow()
                     val appState = remember { AppState() }
                     NavigateApp(appState, homeViewModel)
                 }

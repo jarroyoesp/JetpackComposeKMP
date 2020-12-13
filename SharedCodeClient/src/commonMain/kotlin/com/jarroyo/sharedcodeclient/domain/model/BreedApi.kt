@@ -21,6 +21,7 @@ fun BreedApi.toModel(): List<Breed>? {
     return list
 }
 
+@Serializable
 data class BreedImageApi(
     var status: String? = null,
     @SerialName("message")
