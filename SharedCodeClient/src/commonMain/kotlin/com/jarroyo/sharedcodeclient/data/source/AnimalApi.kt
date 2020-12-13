@@ -2,6 +2,7 @@ package com.jarroyo.sharedcodeclient.data.source
 
 import com.jarroyo.sharedcodeclient.domain.base.Response
 import com.jarroyo.sharedcodeclient.domain.model.BreedApi
+import com.jarroyo.sharedcodeclient.domain.model.BreedImageApi
 import com.jarroyo.sharedcodeclient.domain.model.Breed
 import io.ktor.client.*
 import io.ktor.client.request.*
@@ -28,6 +29,20 @@ class AnimalApi {
             }
             val breedApi = Json.decodeFromString<BreedApi>(json)
             return Response.Success(breedApi.toModel())
+        } catch (ex: Exception) {
+            return Response.Error(ex)
+        }
+    }
+
+    /**
+     * GET ANIMAL IMAGE
+     */
+    suspend fun getAnimalImage(name: String): Response<String?> {
+        try {
+            val url = endpoint + "breed/$name/images/random"
+            val json = httpClient.get<String>(url) {}
+            val breedImageApi = Json.decodeFromString<BreedImageApi>(json)
+            return Response.Success(breedImageApi.image)
         } catch (ex: Exception) {
             return Response.Error(ex)
         }

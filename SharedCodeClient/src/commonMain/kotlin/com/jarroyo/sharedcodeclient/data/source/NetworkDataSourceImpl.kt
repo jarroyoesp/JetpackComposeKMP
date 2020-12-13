@@ -8,4 +8,8 @@ class NetworkDataSourceImpl(private val api: AnimalApi): NetworkDataSource() {
     override suspend fun getAnimalList(): Response<List<Breed>?> {
         return api.getAnimalList()
     }
+
+    override suspend fun getAnimalImage(name: String): Response<String?> {
+        return api.getAnimalImage(name)
+    }
 }

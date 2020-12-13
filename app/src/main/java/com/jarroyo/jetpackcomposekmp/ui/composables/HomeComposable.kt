@@ -32,12 +32,11 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
     val activity = (LifecycleOwnerAmbient.current as ComponentActivity)
     val animalList: List<Breed>? by homeViewModel.animalListLiveData.observeAsState()
 
-    homeViewModel.getAnimalList()
+    homeViewModel.getAnimalListFlow()
 
     Column(modifier = Modifier.padding(16.dp)) {
         animalList?.let {
             for (animal in it) {
-
                 Card(
                     modifier = Modifier.fillMaxWidth(),
                     shape = RoundedCornerShape(8.dp),
@@ -46,12 +45,10 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
                     Box(
                         modifier = Modifier.padding(16.dp),
                     ){
-                        Text("${animal.name}")
+                        Text("${animal.name} ${animal.image}")
                     }
                 }
-
                 Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))
-
             }
         }
     }
