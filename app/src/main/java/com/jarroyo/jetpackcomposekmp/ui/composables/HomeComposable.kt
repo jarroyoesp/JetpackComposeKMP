@@ -34,10 +34,24 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
 
     homeViewModel.getAnimalList()
 
-    Column {
+    Column(modifier = Modifier.padding(16.dp)) {
         animalList?.let {
             for (animal in it) {
-                Text("${animal.name}")
+
+                Card(
+                    modifier = Modifier.fillMaxWidth(),
+                    shape = RoundedCornerShape(8.dp),
+                    backgroundColor = MaterialTheme.colors.surface,
+                ) {
+                    Box(
+                        modifier = Modifier.padding(16.dp),
+                    ){
+                        Text("${animal.name}")
+                    }
+                }
+
+                Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))
+
             }
         }
     }
