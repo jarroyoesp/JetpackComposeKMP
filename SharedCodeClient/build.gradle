@@ -69,7 +69,9 @@ kotlin {
             implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version"
 
             // SERIALIZATION
-            implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_version"
+            //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_version"
+            implementation "org.jetbrains.kotlinx:kotlinx-serialization-json:$serializer_version"
+
 
             // KODE IN
             implementation "org.kodein.di:kodein-di-core:$kodeinVersion"
