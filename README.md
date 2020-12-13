@@ -14,6 +14,6 @@ Android User interface is built using JetpackCompose. Inside we show a list of d
 * [Hilt](https://dagger.dev/hilt/)
 * [Kodein-DI](https://github.com/Kodein-Framework/Kodein-DI)
 * [Jetpack Compose](https://developer.android.com/jetpack/compose)
-
+* [Coil](https://github.com/coil-kt/coil)
 
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Home.png">
