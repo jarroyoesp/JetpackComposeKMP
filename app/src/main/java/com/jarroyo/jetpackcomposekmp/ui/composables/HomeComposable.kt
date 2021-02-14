@@ -22,6 +22,7 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.jarroyo.jetpackcomposekmp.ui.AppState
 import com.jarroyo.jetpackcomposekmp.ui.CurrentScreen
 import com.jarroyo.jetpackcomposekmp.ui.viewModel.HomeViewModel
@@ -43,16 +44,36 @@ fun HomeComposable(appState: AppState, homeViewModel: HomeViewModel) {
                     shape = RoundedCornerShape(8.dp),
                     backgroundColor = MaterialTheme.colors.surface,
                 ) {
-                    Box(
-                        modifier = Modifier.padding(16.dp),
+                    Column(
+                        modifier = Modifier.fillMaxWidth().fillMaxHeight().padding(16.dp),
                     ){
                         NetworkImage(
                             url = animal.image ?: "",
                             Modifier.fillMaxWidth().aspectRatio(2.0f),
                             circularRevealedEnabled = true
                         )
+                        Column(
+                            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Text(
+                                fontSize = 20.sp,
+                                color = Color.Black, text = "${animal.name}",
+                            )
+                        }
+                        Column(
+                            modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                            verticalArrangement = Arrangement.Center,
+                            horizontalAlignment = Alignment.CenterHorizontally
+                        ) {
+                            Button(
+                                modifier = Modifier.fillMaxWidth().fillMaxHeight(),
+                                onClick = { appState.currentScreen = CurrentScreen.DETAIL; appState.animalSelected = animal}, ) {
+                                Text(text = "Detail")
+                            }
+                        }
 
-                        Text(color = Color.Cyan, text = "${animal.name}")
                     }
                 }
                 Spacer(modifier = Modifier.fillMaxWidth().height(16.dp))
