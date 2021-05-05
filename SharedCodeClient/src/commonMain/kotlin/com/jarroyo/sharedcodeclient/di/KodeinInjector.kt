@@ -5,15 +5,11 @@ import com.jarroyo.sharedcodeclient.data.source.AnimalApi
 import com.jarroyo.sharedcodeclient.data.source.NetworkDataSource
 import com.jarroyo.sharedcodeclient.data.source.NetworkDataSourceImpl
 import com.jarroyo.sharedcodeclient.domain.usecase.GetAnimalListUsecase
-import org.kodein.di.Kodein
-import org.kodein.di.erased.bind
-import org.kodein.di.erased.instance
-import org.kodein.di.erased.provider
-import org.kodein.di.erased.singleton
 import kotlin.native.concurrent.ThreadLocal
+import org.kodein.di.*
 
 @ThreadLocal
-val KodeinInjector = Kodein {
+val KodeinInjector = DI {
     /**
      * USECASES
      */

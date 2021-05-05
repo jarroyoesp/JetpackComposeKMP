@@ -34,6 +34,15 @@ android {
             jvmTarget = "1.8"
         }
     }
+
+    configurations {
+        create("androidTestApi")
+        create("androidTestDebugApi")
+        create("androidTestReleaseApi")
+        create("testApi")
+        create("testDebugApi")
+        create("testReleaseApi")
+    }
 }
 
 kotlin {
@@ -66,7 +75,7 @@ kotlin {
             implementation 'org.jetbrains.kotlin:kotlin-stdlib'
 
             // COROUTINES
-            implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version"
+            implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
 
             // SERIALIZATION
             //implementation "org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializer_version"
@@ -74,8 +83,7 @@ kotlin {
 
 
             // KODE IN
-            implementation "org.kodein.di:kodein-di-core:$kodeinVersion"
-            implementation "org.kodein.di:kodein-di-erased:$kodeinVersion"
+            implementation "org.kodein.di:kodein-di:$kodeinVersion"
 
             // KTOR
             implementation "io.ktor:ktor-client-core:$ktor_version"
