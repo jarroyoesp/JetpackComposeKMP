@@ -1,3 +1,6 @@
+![kotlin-version](https://img.shields.io/badge/kotlin-1.4.30-orange)
+![JetpackCompose-version](https://img.shields.io/badge/JetpackCompose-1.0.0_beta01-blue)
+
 # JetpackComposeKMP
 Example of project using JetpackCompose for Android + Kotlin Multiplatform. 
 
@@ -18,3 +21,4 @@ Android User interface is built using JetpackCompose. Inside we show a list of d
 
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Home.png">
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Detail.png">
+<img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/jetpackKMP.gif">

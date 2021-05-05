@@ -1,11 +1,10 @@
-package com.jarroyo.jetpackcomposekmp.ui.utils
+package com.jarroyo.ui
 
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.ContentScale
-import com.jarroyo.jetpackcomposekmp.ui.style.shimmerHighLight
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 
@@ -22,17 +21,13 @@ fun NetworkImage(
   circularRevealedEnabled: Boolean = false,
   contentScale: ContentScale = ContentScale.Crop
 ) {
+
   CoilImage(
     imageModel = url,
     modifier = modifier,
     contentScale = contentScale,
     circularRevealedEnabled = circularRevealedEnabled,
-    circularRevealedDuration = 450,
-    shimmerParams = ShimmerParams(
-      baseColor = MaterialTheme.colors.background,
-      highlightColor = shimmerHighLight,
-      dropOff = 0.65f
-    ),
+    circularRevealedDuration = 250,
     failure = {
       Text(
         text = "image request failed.",
