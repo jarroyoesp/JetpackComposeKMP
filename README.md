@@ -19,6 +19,12 @@ Android User interface is built using JetpackCompose. Inside we show a list of d
 * [Jetpack Compose](https://developer.android.com/jetpack/compose)
 * [Coil](https://github.com/coil-kt/coil)
 
+### Architecture
+
+<img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/arch.png">
+
+### Captures
+
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/jetpackKMP.gif">
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Home.png" width="300">
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Detail.png" width="300">
