@@ -24,7 +24,7 @@ Android User interface is built using JetpackCompose. Inside we show a list of d
 <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/arch.png">
 
 ### Captures
-
-<img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/jetpackKMP.gif">
-<img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Home.png" width="300">
-<img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Detail.png" width="300">
+<p>
+<img width="200" src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/jetpackKMP.gif">
+<img width="200" src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Home.png"> <img src="https://github.com/jarroyoesp/JetpackComposeKMP/blob/master/images/JetpackComposeKMP_Detail.png" width="200">
+</p>
