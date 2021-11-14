@@ -1,5 +1,5 @@
-![kotlin-version](https://img.shields.io/badge/kotlin-1.4.32-orange)
-![JetpackCompose-version](https://img.shields.io/badge/JetpackCompose-1.0.0_beta05-blue)
+![kotlin-version](https://img.shields.io/badge/kotlin-1.5.31-orange)
+![JetpackCompose-version](https://img.shields.io/badge/JetpackCompose-1.0.4-blue)
 
 # JetpackComposeKMP
 Example of project using JetpackCompose for Android + Kotlin Multiplatform. 

@@ -5,6 +5,7 @@ import com.jarroyo.sharedcodeclient.data.source.AnimalApi
 import com.jarroyo.sharedcodeclient.data.source.NetworkDataSource
 import com.jarroyo.sharedcodeclient.data.source.NetworkDataSourceImpl
 import com.jarroyo.sharedcodeclient.domain.usecase.GetAnimalListUsecase
+import com.jarroyo.sharedcodeclient.domain.usecase.GetAnimalListUsecaseFlow
 import kotlin.native.concurrent.ThreadLocal
 import org.kodein.di.*
 
@@ -14,6 +15,7 @@ val KodeinInjector = DI {
      * USECASES
      */
     bind<GetAnimalListUsecase>() with singleton { GetAnimalListUsecase(instance()) }
+    bind<GetAnimalListUsecaseFlow>() with singleton { GetAnimalListUsecaseFlow(instance()) }
 
     /**
      * REPOSITORIES
@@ -29,4 +31,10 @@ val KodeinInjector = DI {
      * API
      */
     bind<AnimalApi>() with provider { AnimalApi() }
+}
+
+
+class Injector {
+    val getAnimalListUsecase: GetAnimalListUsecase by KodeinInjector.instance()
+    val getAnimalListUsecaseFlow: GetAnimalListUsecaseFlow by KodeinInjector.instance()
 }

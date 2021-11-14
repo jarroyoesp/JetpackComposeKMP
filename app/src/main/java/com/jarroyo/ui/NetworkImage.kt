@@ -4,7 +4,11 @@ import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.imageResource
+import com.jarroyo.R
+import com.skydoves.landscapist.CircularReveal
 import com.skydoves.landscapist.ShimmerParams
 import com.skydoves.landscapist.coil.CoilImage
 
@@ -24,15 +28,13 @@ fun NetworkImage(
 
   CoilImage(
     imageModel = url,
-    modifier = modifier,
-    contentScale = contentScale,
-    circularRevealedEnabled = circularRevealedEnabled,
-    circularRevealedDuration = 250,
-    failure = {
-      Text(
-        text = "image request failed.",
-        style = MaterialTheme.typography.body2
-      )
-    }
+    // Crop, Fit, Inside, FillHeight, FillWidth, None
+    contentScale = ContentScale.Crop,
+    // shows an image with a circular revealed animation.
+    circularReveal = CircularReveal(duration = 250),
+    // shows a placeholder ImageBitmap when loading.
+    placeHolder = ImageBitmap.imageResource(R.drawable.img_placeholder),
+    // shows an error ImageBitmap when the request failed.
+    error = ImageBitmap.imageResource(R.drawable.img_error)
   )
 }

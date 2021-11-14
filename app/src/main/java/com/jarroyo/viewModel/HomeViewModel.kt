@@ -6,7 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.jarroyo.sharedcodeclient.di.InjectorCommon
+import com.jarroyo.sharedcodeclient.di.Injector
 import com.jarroyo.sharedcodeclient.domain.base.Response
 import com.jarroyo.sharedcodeclient.domain.usecase.GetAnimalListUsecase
 import com.jarroyo.sharedcodeclient.domain.usecase.GetAnimalListUsecaseFlow
@@ -25,8 +25,8 @@ class HomeViewModel @ViewModelInject constructor(
     private var _animalListSearchLiveData: MutableLiveData<List<Breed>?> = MutableLiveData()
     val animalListLiveData: LiveData<List<Breed>?> get() = _animalListSearchLiveData
 
-    private val getAnimalListUsecase: GetAnimalListUsecase = InjectorCommon.provideGetAnimalListUsecase()
-    private val getAnimalListUsecaseFlow: GetAnimalListUsecaseFlow = InjectorCommon.provideGetAnimalListUsecaseFlow()
+    private val getAnimalListUsecase: GetAnimalListUsecase = Injector().getAnimalListUsecase
+    private val getAnimalListUsecaseFlow: GetAnimalListUsecaseFlow = Injector().getAnimalListUsecaseFlow
 
 
     fun getAnimalList() {
